@@ -17,7 +17,7 @@ let direction = true;
 function draw (e) {
     if(!isDrawing) return;   // Stop the fn from running when they are not moused down
     console.log(e);
-    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`; // make the color turns rainbow
     ctx.beginPath();
     // start from
     ctx.moveTo(lastX, lastY);
@@ -31,7 +31,8 @@ function draw (e) {
         hue = 0;
     }
 
-    if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+    // change the brush size from small to big and vice versa as we keep drawing
+    if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {    
         direction = !direction;
     }
         
